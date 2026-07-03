@@ -1,0 +1,160 @@
+@import "tailwindcss";
+
+/* ── Aaron's world: near-black instrument panel, bluish-green signals ── */
+@theme inline {
+  /* grounds — teal-biased, never flat grey */
+  --color-abyss: #05090d;
+  --color-panel: #0a1218;
+  --color-card: #0c1720;
+  /* ink */
+  --color-ink: #e9f6f2;
+  --color-mist: #8aa6a1;
+  --color-line: #142329;
+  /* signals — the only loud things on the page */
+  --color-teal: #2de6c4;
+  --color-cyan: #19c8ff;
+  --color-spring: #46ffa6;
+
+  --font-display: var(--font-clash);
+  --font-sans: var(--font-satoshi);
+  --font-mono: var(--font-jetbrains);
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+body {
+  background: #05090d;
+  color: #e9f6f2;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: #2de6c4;
+  color: #05090d;
+}
+
+section[id] {
+  scroll-margin-top: 84px;
+}
+
+/* thin quiet scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #05090d;
+}
+::-webkit-scrollbar-thumb {
+  background: #142329;
+  border-radius: 8px;
+  border: 2px solid #05090d;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #1d3640;
+}
+
+/* ── film grain — the anti-flat layer ── */
+.grain {
+  position: fixed;
+  inset: 0;
+  z-index: 70;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ── ambient aurora — low, slow, never a gradient hero ── */
+.au {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(90px);
+  mix-blend-mode: screen;
+  opacity: 0.32;
+  animation: drift 26s ease-in-out infinite;
+  will-change: transform;
+}
+.au-1 {
+  width: 46vw;
+  height: 46vw;
+  left: -12vw;
+  top: -16vw;
+  background: radial-gradient(circle, #2de6c4, transparent 62%);
+}
+.au-2 {
+  width: 38vw;
+  height: 38vw;
+  right: -10vw;
+  top: 4vw;
+  background: radial-gradient(circle, #19c8ff, transparent 62%);
+  animation-delay: -9s;
+}
+.au-3 {
+  width: 34vw;
+  height: 34vw;
+  left: 30vw;
+  bottom: -18vw;
+  background: radial-gradient(circle, #46ffa6, transparent 62%);
+  animation-delay: -17s;
+}
+
+@keyframes drift {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(5vw, 3vw) scale(1.1);
+  }
+  66% {
+    transform: translate(-4vw, 2vw) scale(0.94);
+  }
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0.25;
+  }
+}
+
+@keyframes eq {
+  0%,
+  100% {
+    transform: scaleY(0.25);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes pulse-dot {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+
+/* ── respect reduced motion, fully ── */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
