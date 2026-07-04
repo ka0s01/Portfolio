@@ -1,6 +1,37 @@
 import { Eyebrow } from "@/components/scramble";
 import { Reveal } from "@/components/reveal";
-import { EmailReveal } from "@/components/email-reveal";
+import { FloatingDock } from "@/components/floating-dock";
+import {
+  IconBrandGithub,
+  IconBrandInstagram,
+  IconBrandLinkedin,
+  IconMail,
+} from "@tabler/icons-react";
+
+const links = [
+  {
+    title: "Email",
+    icon: <IconMail className="h-full w-full" />,
+    href: "mailto:varghese.aaron13@gmail.com",
+  },
+  {
+    title: "GitHub",
+    icon: <IconBrandGithub className="h-full w-full" />,
+    href: "https://github.com/ka0s01",
+  },
+  {
+    title: "LinkedIn",
+    icon: <IconBrandLinkedin className="h-full w-full" />,
+    // TODO: drop in the real LinkedIn URL
+    href: "https://www.linkedin.com/",
+  },
+  {
+    title: "Instagram",
+    icon: <IconBrandInstagram className="h-full w-full" />,
+    // TODO: drop in your real Instagram handle
+    href: "https://www.instagram.com/",
+  },
+];
 
 export function Contact() {
   return (
@@ -22,25 +53,12 @@ export function Contact() {
           </p>
         </Reveal>
         <Reveal delay={220}>
-          <div className="mt-10 flex flex-wrap items-center gap-3">
-            <EmailReveal />
-            <a
-              href="https://github.com/ka0s01"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-full border border-line px-6 py-3 text-sm font-medium transition-all hover:-translate-y-0.5 hover:border-cyan/60"
-            >
-              GitHub ↗
-            </a>
-            {/* TODO: drop in the real LinkedIn URL */}
-            <a
-              href="https://www.linkedin.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-full border border-line px-6 py-3 text-sm font-medium transition-all hover:-translate-y-0.5 hover:border-cyan/60"
-            >
-              LinkedIn ↗
-            </a>
+          <div className="mt-10 flex flex-wrap items-center gap-6">
+            <FloatingDock
+              items={links}
+              desktopClassName="flex"
+              mobileClassName="hidden"
+            />
             <a
               href="/resume.pdf"
               download
