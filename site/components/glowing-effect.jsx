@@ -5,8 +5,8 @@ import { animate } from "motion/react";
 
 /**
  * Aceternity `glowing-effect`, re-skinned for this site:
- * the stock gradient ships pink/gold/olive — swapped for the
- * teal → cyan → spring → deep-blue signal palette.
+ * the stock gradient ships pink/gold/olive — swapped for a
+ * molten-metal ember palette (graphite → rust → ember → hot highlight).
  */
 const GlowingEffect = memo(
   ({
@@ -136,17 +136,17 @@ const GlowingEffect = memo(
                 var(--black),
                 var(--black) calc(25% / var(--repeating-conic-gradient-times))
               )`
-                : `radial-gradient(circle, #2de6c4 10%, #2de6c400 20%),
-              radial-gradient(circle at 40% 40%, #19c8ff 5%, #19c8ff00 15%),
-              radial-gradient(circle at 60% 60%, #46ffa6 10%, #46ffa600 20%),
-              radial-gradient(circle at 40% 60%, #1e7fd0 10%, #1e7fd000 20%),
+                : `radial-gradient(circle, #f5642b 10%, #f5642b00 20%),
+              radial-gradient(circle at 40% 40%, #ffaa66 5%, #ffaa6600 15%),
+              radial-gradient(circle at 60% 60%, #a0340b 10%, #a0340b00 20%),
+              radial-gradient(circle at 40% 60%, #dd4115 10%, #dd411500 20%),
               repeating-conic-gradient(
                 from 236.84deg at 50% 50%,
-                #2de6c4 0%,
-                #19c8ff calc(25% / var(--repeating-conic-gradient-times)),
-                #46ffa6 calc(50% / var(--repeating-conic-gradient-times)),
-                #1e7fd0 calc(75% / var(--repeating-conic-gradient-times)),
-                #2de6c4 calc(100% / var(--repeating-conic-gradient-times))
+                #1e130f 0%,
+                #a0340b calc(25% / var(--repeating-conic-gradient-times)),
+                #f5642b calc(50% / var(--repeating-conic-gradient-times)),
+                #ffaa66 calc(75% / var(--repeating-conic-gradient-times)),
+                #1e130f calc(100% / var(--repeating-conic-gradient-times))
               )`,
           }}
           className={cn(

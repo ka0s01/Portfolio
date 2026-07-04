@@ -43,7 +43,7 @@ export const metadata = {
 };
 
 export const viewport = {
-  themeColor: "#05090d",
+  themeColor: "#0d0806",
   width: "device-width",
   initialScale: 1,
 };
@@ -55,12 +55,8 @@ export default function RootLayout({ children }) {
       className={`${clash.variable} ${satoshi.variable} ${jetbrains.variable} antialiased`}
     >
       <body className="min-h-screen bg-abyss font-sans text-ink">
-        {/* ambient aurora — fixed, behind everything */}
-        <div aria-hidden className="fixed inset-0 -z-10 overflow-hidden">
-          <span className="au au-1" />
-          <span className="au au-2" />
-          <span className="au au-3" />
-        </div>
+        {/* schematic grid — fixed, behind everything */}
+        <div aria-hidden className="schematic" />
         {children}
         {/* film grain over everything — kills the flat-gradient AI look */}
         <div aria-hidden className="grain" />

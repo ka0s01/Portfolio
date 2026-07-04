@@ -1,6 +1,37 @@
+import {
+  IconMail,
+  IconBrandGithub,
+  IconBrandLinkedin,
+  IconBrandInstagram,
+} from "@tabler/icons-react";
 import { Eyebrow } from "@/components/scramble";
 import { Reveal } from "@/components/reveal";
-import { EmailReveal } from "@/components/email-reveal";
+import { FloatingDock } from "@/components/floating-dock";
+
+const DOCK_ITEMS = [
+  {
+    title: "Email",
+    icon: <IconMail className="h-full w-full text-ink" />,
+    href: "mailto:varghese.aaron13@gmail.com",
+  },
+  {
+    title: "GitHub",
+    icon: <IconBrandGithub className="h-full w-full text-ink" />,
+    href: "https://github.com/ka0s01",
+  },
+  {
+    // TODO: drop in the real LinkedIn URL
+    title: "LinkedIn",
+    icon: <IconBrandLinkedin className="h-full w-full text-ink" />,
+    href: "https://www.linkedin.com/",
+  },
+  {
+    // TODO: drop in your real Instagram handle
+    title: "Instagram",
+    icon: <IconBrandInstagram className="h-full w-full text-ink" />,
+    href: "https://www.instagram.com/",
+  },
+];
 
 export function Contact() {
   return (
@@ -10,9 +41,7 @@ export function Contact() {
         <Reveal>
           <h2 className="max-w-[14ch] font-display text-[clamp(2.6rem,8vw,6rem)] font-bold leading-[0.95] tracking-tight text-balance">
             Let’s build something{" "}
-            <span className="bg-gradient-to-r from-teal via-cyan to-spring bg-clip-text text-transparent">
-              together.
-            </span>
+            <span className="text-ember">together.</span>
           </h2>
         </Reveal>
         <Reveal delay={120}>
@@ -22,32 +51,12 @@ export function Contact() {
           </p>
         </Reveal>
         <Reveal delay={220}>
-          <div className="mt-10 flex flex-wrap items-center gap-3">
-            <EmailReveal />
-            <a
-              href="https://github.com/ka0s01"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-full border border-line px-6 py-3 text-sm font-medium transition-all hover:-translate-y-0.5 hover:border-cyan/60"
-            >
-              GitHub ↗
-            </a>
-            {/* TODO: drop in the real LinkedIn URL */}
-            <a
-              href="https://www.linkedin.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-full border border-line px-6 py-3 text-sm font-medium transition-all hover:-translate-y-0.5 hover:border-cyan/60"
-            >
-              LinkedIn ↗
-            </a>
-            <a
-              href="/resume.pdf"
-              download
-              className="rounded-full bg-teal px-6 py-3 text-sm font-bold text-abyss transition-all hover:-translate-y-0.5 hover:shadow-[0_10px_36px_rgba(45,230,196,0.4)]"
-            >
-              ↓ Download résumé
-            </a>
+          <div className="mt-10">
+            <FloatingDock
+              items={DOCK_ITEMS}
+              desktopClassName="flex"
+              mobileClassName="hidden"
+            />
           </div>
         </Reveal>
       </div>

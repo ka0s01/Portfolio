@@ -19,9 +19,7 @@ export function Hero() {
           <h1 className="font-display text-[clamp(3.6rem,12.5vw,10.5rem)] font-bold uppercase leading-[0.88] tracking-[-0.02em]">
             Aaron
             <br />
-            <span className="bg-gradient-to-r from-teal via-cyan to-spring bg-clip-text text-transparent">
-              Varghese
-            </span>
+            <span className="text-ember">Varghese</span>
           </h1>
         </Reveal>
 
@@ -45,16 +43,16 @@ export function Hero() {
           <div className="mt-11 flex flex-wrap items-center gap-3">
             <a
               href="#projects"
-              className="rounded-full bg-teal px-6 py-3 text-sm font-bold text-abyss transition-all hover:-translate-y-0.5 hover:shadow-[0_10px_36px_rgba(45,230,196,0.4)]"
+              className="rounded-full bg-ember px-6 py-3 text-sm font-bold text-abyss transition-all hover:-translate-y-0.5 hover:shadow-[0_10px_36px_rgba(245,100,43,0.4)]"
             >
               My Work →
             </a>
-            
+
             <a
               href="https://github.com/ka0s01"
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-full border border-line px-6 py-3 text-sm font-medium text-ink transition-all hover:-translate-y-0.5 hover:border-cyan/60 hover:shadow-[0_8px_30px_rgba(25,200,255,0.15)]"
+              className="rounded-full border border-line px-6 py-3 text-sm font-medium text-ink transition-all hover:-translate-y-0.5 hover:border-ember/60 hover:shadow-[0_8px_30px_rgba(245,100,43,0.15)]"
             >
               GitHub ↗
             </a>
@@ -63,7 +61,7 @@ export function Hero() {
               href="https://www.linkedin.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-full border border-line px-6 py-3 text-sm font-medium text-ink transition-all hover:-translate-y-0.5 hover:border-cyan/60 hover:shadow-[0_8px_30px_rgba(25,200,255,0.15)]"
+              className="rounded-full border border-line px-6 py-3 text-sm font-medium text-ink transition-all hover:-translate-y-0.5 hover:border-ember/60 hover:shadow-[0_8px_30px_rgba(245,100,43,0.15)]"
             >
               LinkedIn ↗
             </a>
@@ -72,7 +70,7 @@ export function Hero() {
               href="https://www.instagram.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-full border border-line px-6 py-3 text-sm font-medium text-ink transition-all hover:-translate-y-0.5 hover:border-cyan/60 hover:shadow-[0_8px_30px_rgba(25,200,255,0.15)]"
+              className="rounded-full border border-line px-6 py-3 text-sm font-medium text-ink transition-all hover:-translate-y-0.5 hover:border-ember/60 hover:shadow-[0_8px_30px_rgba(245,100,43,0.15)]"
             >
               Instagram ↗
             </a>

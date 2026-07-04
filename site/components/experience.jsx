@@ -1,4 +1,3 @@
-import { Eyebrow } from "@/components/scramble";
 import { Reveal } from "@/components/reveal";
 
 const JOBS = [
@@ -37,7 +36,6 @@ export function Experience() {
   return (
     <section id="work" className="relative py-24 md:py-32">
       <div className="mx-auto w-full max-w-6xl px-6">
-        <Eyebrow>Experience</Eyebrow>
         <Reveal>
           <h2 className="font-display text-[clamp(2rem,5vw,3.3rem)] font-semibold tracking-tight text-balance">
             Where I’ve been building
@@ -52,7 +50,7 @@ export function Experience() {
                   i > 0 ? "border-t" : ""
                 }`}
               >
-                <div className="font-mono text-xs tracking-[0.18em] text-cyan md:pt-1.5">
+                <div className="font-mono text-xs tracking-[0.18em] text-ember md:pt-1.5">
                   {job.when}
                 </div>
                 <div>
@@ -65,7 +63,7 @@ export function Experience() {
                   <ul className="mt-4 flex max-w-[62ch] flex-col gap-2 text-[15px] leading-relaxed text-mist">
                     {job.points.map((p) => (
                       <li key={p} className="flex gap-3">
-                        <span aria-hidden className="mt-[11px] h-px w-4 shrink-0 bg-teal/70" />
+                        <span aria-hidden className="mt-[11px] h-px w-4 shrink-0 bg-ember/70" />
                         {p}
                       </li>
                     ))}
@@ -78,11 +76,10 @@ export function Experience() {
 
         <Reveal delay={120}>
           <div className="mt-6 flex flex-wrap items-center gap-x-8 gap-y-3 rounded-xl border border-line bg-panel/60 px-6 py-4 font-mono text-[11px] tracking-[0.2em] text-mist">
-            <span className="text-teal">ALSO:</span>
+            <span className="text-ember">ALSO:</span>
             <span>5TH OVERALL — BITWARS 2.0, VIT CHENNAI</span>
             <span>Member at OSPC</span>
             <span>AI/ML member at CODEYGEN</span>
-            
           </div>
         </Reveal>
       </div>

@@ -59,18 +59,18 @@ function TerminalMock() {
       <div className="mb-3 flex gap-1.5" aria-hidden>
         <span className="h-2.5 w-2.5 rounded-full bg-line" />
         <span className="h-2.5 w-2.5 rounded-full bg-line" />
-        <span className="h-2.5 w-2.5 rounded-full bg-teal/50" />
+        <span className="h-2.5 w-2.5 rounded-full bg-ember/50" />
       </div>
       <p>
-        <span className="text-spring">$</span> echo run{" "}
-        <span className="text-cyan">&quot;fix the failing test&quot;</span>
+        <span className="text-ember">$</span> echo run{" "}
+        <span className="font-medium text-ink">&quot;fix the failing test&quot;</span>
       </p>
       <p className="text-mist">⠋ compressing context — 48k → 11k tokens</p>
       <p className="text-mist">→ patching src/parser.py (2 edits)</p>
       <p>
-        <span className="text-teal">✔</span> done — tests green
+        <span className="text-ember">✔</span> done — tests green
       </p>
-      <p aria-hidden className="animate-[blink_1.1s_steps(1)_infinite] text-teal">
+      <p aria-hidden className="animate-[blink_1.1s_steps(1)_infinite] text-ember">
         ▮
       </p>
     </div>
@@ -112,7 +112,7 @@ function Card({ p, children }) {
             {p.stack.map((s) => (
               <span
                 key={s}
-                className="rounded-full border border-line bg-teal/5 px-2.5 py-1 font-mono text-[10.5px] tracking-wide text-teal"
+                className="rounded-full border border-line bg-panel/60 px-2.5 py-1 font-mono text-[10.5px] tracking-wide text-mist"
               >
                 {s}
               </span>
@@ -124,7 +124,7 @@ function Card({ p, children }) {
             rel="noopener noreferrer"
             className="group mt-auto inline-flex items-center gap-2 pt-6 font-mono text-[13px] text-ink"
           >
-            <span className="text-teal transition-transform group-hover:translate-x-1">
+            <span className="text-ember transition-transform group-hover:translate-x-1">
               →
             </span>
             <span className="underline-offset-4 group-hover:underline">
@@ -180,7 +180,7 @@ export function Projects() {
                     <span className="font-display text-lg font-semibold tracking-tight">
                       {s.name}
                     </span>
-                    <span className="font-mono text-xs text-teal opacity-0 transition-opacity group-hover:opacity-100">
+                    <span className="font-mono text-xs text-ember opacity-0 transition-opacity group-hover:opacity-100">
                       open ↗
                     </span>
                   </div>

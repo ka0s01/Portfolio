@@ -89,7 +89,7 @@ export function Eyebrow({ children, className }) {
   return (
     <div
       className={cn(
-        "mb-6 font-mono text-[11px] font-medium uppercase tracking-[0.3em] text-teal",
+        "mb-6 font-mono text-[11px] font-medium uppercase tracking-[0.3em] text-ember",
         className
       )}
     >

@@ -29,7 +29,7 @@ export function Ticker() {
         {row.map((t, i) => (
           <span key={i} className="flex items-center">
             <span className="px-5">{t}</span>
-            <span className="text-teal">✦</span>
+            <span className="text-ember">✦</span>
           </span>
         ))}
       </div>
