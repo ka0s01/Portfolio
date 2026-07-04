@@ -45,25 +45,23 @@ const FloatingDockMobile = ({ items, className }) => {
               <motion.div
                 key={item.title}
                 initial={{ opacity: 0, y: 10 }}
-                animate={{
-                  opacity: 1,
-                  y: 0,
-                }}
+                animate={{ opacity: 1, y: 0 }}
                 exit={{
                   opacity: 0,
                   y: 10,
-                  transition: {
-                    delay: idx * 0.05,
-                  },
+                  transition: { delay: idx * 0.05 },
                 }}
                 transition={{ delay: (items.length - 1 - idx) * 0.05 }}
               >
                 <a
                   href={item.href}
+                  {...(item.href.startsWith("http")
+                    ? { target: "_blank", rel: "noopener noreferrer" }
+                    : {})}
                   key={item.title}
-                  className="flex h-10 w-10 items-center justify-center rounded-full border border-line bg-panel"
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-line bg-card"
                 >
-                  <div className="h-4 w-4">{item.icon}</div>
+                  <div className="h-4 w-4 text-mist">{item.icon}</div>
                 </a>
               </motion.div>
             ))}
@@ -72,7 +70,7 @@ const FloatingDockMobile = ({ items, className }) => {
       </AnimatePresence>
       <button
         onClick={() => setOpen(!open)}
-        className="flex h-10 w-10 items-center justify-center rounded-full border border-line bg-panel"
+        className="flex h-10 w-10 items-center justify-center rounded-full border border-line bg-card"
       >
         <IconLayoutNavbarCollapse className="h-5 w-5 text-mist" />
       </button>
@@ -111,7 +109,11 @@ function IconContainer({ mouseX, title, icon, href }) {
   let heightTransform = useTransform(distance, [-150, 0, 150], [40, 80, 40]);
 
   let widthTransformIcon = useTransform(distance, [-150, 0, 150], [20, 40, 20]);
-  let heightTransformIcon = useTransform(distance, [-150, 0, 150], [20, 40, 20]);
+  let heightTransformIcon = useTransform(
+    distance,
+    [-150, 0, 150],
+    [20, 40, 20]
+  );
 
   let width = useSpring(widthTransform, {
     mass: 0.1,
@@ -138,13 +140,18 @@ function IconContainer({ mouseX, title, icon, href }) {
   const [hovered, setHovered] = useState(false);
 
   return (
-    <a href={href} target="_blank" rel="noopener noreferrer">
+    <a
+      href={href}
+      {...(href.startsWith("http")
+        ? { target: "_blank", rel: "noopener noreferrer" }
+        : {})}
+    >
       <motion.div
         ref={ref}
         style={{ width, height }}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
-        className="relative flex aspect-square items-center justify-center rounded-full border border-line bg-card transition-colors hover:border-ember/60"
+        className="group relative flex aspect-square items-center justify-center rounded-full border border-line bg-card transition-colors hover:border-ember/60"
       >
         <AnimatePresence>
           {hovered && (
@@ -152,7 +159,7 @@ function IconContainer({ mouseX, title, icon, href }) {
               initial={{ opacity: 0, y: 10, x: "-50%" }}
               animate={{ opacity: 1, y: 0, x: "-50%" }}
               exit={{ opacity: 0, y: 2, x: "-50%" }}
-              className="absolute -top-8 left-1/2 w-fit whitespace-pre rounded-md border border-line bg-panel px-2 py-0.5 font-mono text-xs text-ink"
+              className="absolute -top-8 left-1/2 w-fit rounded-md border border-line bg-panel px-2 py-0.5 font-mono text-xs whitespace-pre text-ink"
             >
               {title}
             </motion.div>
@@ -160,7 +167,7 @@ function IconContainer({ mouseX, title, icon, href }) {
         </AnimatePresence>
         <motion.div
           style={{ width: widthIcon, height: heightIcon }}
-          className="flex items-center justify-center"
+          className="flex items-center justify-center text-mist transition-colors group-hover:text-ember"
         >
           {icon}
         </motion.div>

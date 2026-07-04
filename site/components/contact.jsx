@@ -11,24 +11,24 @@ import { FloatingDock } from "@/components/floating-dock";
 const DOCK_ITEMS = [
   {
     title: "Email",
-    icon: <IconMail className="h-full w-full text-ink" />,
+    icon: <IconMail className="h-full w-full" />,
     href: "mailto:varghese.aaron13@gmail.com",
   },
   {
     title: "GitHub",
-    icon: <IconBrandGithub className="h-full w-full text-ink" />,
+    icon: <IconBrandGithub className="h-full w-full" />,
     href: "https://github.com/ka0s01",
   },
   {
     // TODO: drop in the real LinkedIn URL
     title: "LinkedIn",
-    icon: <IconBrandLinkedin className="h-full w-full text-ink" />,
+    icon: <IconBrandLinkedin className="h-full w-full" />,
     href: "https://www.linkedin.com/",
   },
   {
     // TODO: drop in your real Instagram handle
     title: "Instagram",
-    icon: <IconBrandInstagram className="h-full w-full text-ink" />,
+    icon: <IconBrandInstagram className="h-full w-full" />,
     href: "https://www.instagram.com/",
   },
 ];
