@@ -46,8 +46,7 @@ export function Contact() {
         </Reveal>
         <Reveal delay={120}>
           <p className="mt-7 max-w-[46ch] text-lg leading-relaxed text-mist">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit — sed do
-            eiusmod tempor incididunt ut labore.
+            
           </p>
         </Reveal>
         <Reveal delay={220}>

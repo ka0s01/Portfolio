@@ -13,12 +13,11 @@ const FEATURED = [
     wide: true,
   },
   {
-    code: "RXL-02",
-    name: "RxLens",
-    href: "https://github.com/ka0s01/RxLens-FDA-Drug-Label-RAG-System",
+    code: "STR-02",
+    name: "Stride",
     blurb:
-      "Ask FDA drug labels questions in plain English. A RAG pipeline built from scratch — ingestion, overlap chunking, embedding retrieval by cosine similarity, local inference with Ollama-Mistral.",
-    stack: ["Python", "Flask", "RAG", "Streamlit"],
+      "A multi-tenant web app that syncs Garmin Connect health data into a custom dashboard, with social features layered on top. An async ingestion pipeline (FastAPI, Celery, Redis, PostgreSQL) upserts the data and recovers from auth failures without disconnecting accounts, behind JWT auth, encrypted credential storage, and per-user data isolation.",
+    stack: ["Python", "Flask", "Celery", "Redis", "React", "Docker"],
   },
   {
     code: "NXS-03",
@@ -37,9 +36,9 @@ const SHELF = [
     note: "A live now-playing display and remote client, built in Python.",
   },
   {
-    name: "NotAFan",
-    href: "https://github.com/ka0s01/NotAFan",
-    note: "Chrome extension that names everyone who doesn’t follow you back.",
+    name: "Portfolio Analytics Engine",
+    href: "https://github.com/ka0s01/portfolio-analytics-engine",
+    note: "Evaluates stock portfolios with risk-adjusted metrics — CAGR, Sharpe, Sortino, max drawdown.",
   },
   {
     name: "WC2026 Simulator",
@@ -47,9 +46,9 @@ const SHELF = [
     note: "A World Cup 2026 simulation engine.",
   },
   {
-    name: "mnist-nn",
-    href: "https://github.com/ka0s01/mnist-nn",
-    note: "A neural network from scratch — no frameworks, just numpy.",
+    name: "RxLens",
+    href: "https://github.com/ka0s01/RxLens-FDA-Drug-Label-RAG-System",
+    note: "Ask FDA drug labels questions in plain English via a RAG pipeline.",
   },
 ];
 
@@ -80,7 +79,7 @@ function TerminalMock() {
 function Card({ p, children }) {
   return (
     <div
-      className={`relative rounded-2xl border border-line bg-panel/80 p-2 ${
+      className={`relative h-full rounded-2xl border border-line bg-panel/80 p-2 ${
         p.wide ? "md:col-span-2" : ""
       }`}
     >
@@ -118,19 +117,21 @@ function Card({ p, children }) {
               </span>
             ))}
           </div>
-          <a
-            href={p.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group mt-auto inline-flex items-center gap-2 pt-6 font-mono text-[13px] text-ink"
-          >
-            <span className="text-ember transition-transform group-hover:translate-x-1">
-              →
-            </span>
-            <span className="underline-offset-4 group-hover:underline">
-              github / {p.name.toLowerCase()}
-            </span>
-          </a>
+          {p.href && (
+            <a
+              href={p.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group mt-auto inline-flex items-center gap-2 pt-6 font-mono text-[13px] text-ink"
+            >
+              <span className="text-ember transition-transform group-hover:translate-x-1">
+                →
+              </span>
+              <span className="underline-offset-4 group-hover:underline">
+                github / {p.name.toLowerCase()}
+              </span>
+            </a>
+          )}
         </div>
         {children}
       </div>

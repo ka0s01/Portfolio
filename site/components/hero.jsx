@@ -25,11 +25,8 @@ export function Hero() {
 
         <Reveal delay={180}>
           <p className="mt-9 max-w-2xl text-lg leading-relaxed text-mist md:text-xl">
-            Lorem ipsum dolor sit amet,{" "}
-            <span className="font-medium text-ink">
-              consectetur adipiscing elit
-            </span>{" "}
-            — sed do eiusmod tempor incididunt ut labore et dolore.
+              Im a CS Engineer based in Chennai, India I build, 
+              develop any idea that pops into my head
           </p>
         </Reveal>
 
