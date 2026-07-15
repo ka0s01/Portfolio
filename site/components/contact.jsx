@@ -46,7 +46,7 @@ export function Contact() {
         </Reveal>
         <Reveal delay={120}>
           <p className="mt-7 max-w-[46ch] text-lg leading-relaxed text-mist">
-            
+            Reach out to me through my socials
           </p>
         </Reveal>
         <Reveal delay={220}>
